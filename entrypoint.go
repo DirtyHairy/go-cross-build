@@ -93,6 +93,7 @@ func build(packageName, destDir string, platform map[string]string, ldflags stri
 	// execute `go build` command
 	fmt.Println("Creating a build using :", buildCmd.String())
 	if output, err := buildCmd.Output(); err != nil {
+		fmt.Printf("%s\n", output)
 		fmt.Println("An error occurred during build:", err)
 		os.Exit(1)
 	} else {
